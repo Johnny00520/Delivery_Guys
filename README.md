@@ -3,6 +3,6 @@ Object-Oriented-Project
 
 # Team Members
 
-- Peter Delevoryas
+- Peter Delevoryas 
 - Eric Murphy
 - ChenHao Cheng
