@@ -1,17 +1,19 @@
-Team: Liz Boese
-      Cookie Monster
+Team: Chen Hao Cheng
+      Peter Delevoryas
+      Hulaif Muhammad Ilyas
+      Eric Murphy
 
-Title: Delivery Service
+Title: Eat-net
 
-Description: A delivery service website that clients can lease access to which keeps
-track of their customers, what gets shipped and how often. We will set up for one
-client only.
+Description: A website where restaurant owners can advertised their restaurant, restaurant location, and their food. The website allow restaurant onwers to set up delivery and pick-up system and customers can 
 
-Actors: admin, customer
+Actors: Restaurant owners, customers
 
 Functionality:
   • Customers can sign up
   • Customers can log in
+  * restaurant owners can sign up
+  * restaurant owners can log in
   • Admin can log in
   • Admin can set up what products get delivered each week
   • Admin can add products
@@ -19,9 +21,7 @@ Functionality:
   • Customers can add products to a shopping cart
   • Customers can checkout/pay
   • Customers can view their orders
+  * customers can cancel orders
+  * restaurant owners can configure and customize the website
   • Admin can search for a customer by name
   • Admin can view a customer’s order
-
-[OPTIONAL] Stretch Functionality:
-  • End world hunger
-  • Learn how to fly
