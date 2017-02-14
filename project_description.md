@@ -5,7 +5,7 @@ Team: Chen Hao Cheng
 
 Title: Eat-net
 
-Description: A website where restaurant owners can advertised their restaurant, restaurant location, and their food. The website allow restaurant onwers to set up delivery and pick-up system and customers can 
+Description: A website where restaurant owners can advertised their restaurant, restaurant location, and their food. The website allow restaurant owners to set up delivery and pick-up system for clients and customers can order, cancel, and view their orders.
 
 Actors: Restaurant owners, customers
 
