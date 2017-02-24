@@ -6,7 +6,7 @@
 <html>
 <body>
 <h2>Hello World ${firstName} ${name}!</h2>
-<form action="WelcomeController" method="post">
+<form action="login_validation" method="post">
 	Name: <input type="text" name="name"><br>
 	Pass: <input type="password" name="password"><br>
 	<input type="submit" value="login">
