@@ -1,9 +1,0 @@
-0:0:0:0:0:0:0:1 - - [20/Feb/2017:21:08:48 -0700] "GET /Spring2017/welcomeMessage HTTP/1.1" 404 1001 http-bio-8080-exec-1 69
-0:0:0:0:0:0:0:1 - - [20/Feb/2017:21:08:54 -0700] "GET /Spring2017 HTTP/1.1" 302 - http-bio-8080-exec-3 0
-0:0:0:0:0:0:0:1 - - [20/Feb/2017:21:08:54 -0700] "GET /Spring2017/ HTTP/1.1" 200 253 http-bio-8080-exec-4 65
-0:0:0:0:0:0:0:1 - - [20/Feb/2017:21:09:09 -0700] "GET /Spring2017/login-success.jsp HTTP/1.1" 200 284 http-bio-8080-exec-5 10
-0:0:0:0:0:0:0:1 - - [20/Feb/2017:21:10:50 -0700] "GET /Spring2017/login-success.jsp HTTP/1.1" 200 290 http-bio-8080-exec-8 1251
-0:0:0:0:0:0:0:1 - - [20/Feb/2017:21:11:10 -0700] "GET /Spring2017 HTTP/1.1" 302 - http-bio-8080-exec-10 0
-0:0:0:0:0:0:0:1 - - [20/Feb/2017:21:11:10 -0700] "GET /Spring2017/ HTTP/1.1" 200 253 http-bio-8080-exec-10 1
-0:0:0:0:0:0:0:1 - - [20/Feb/2017:21:11:15 -0700] "POST /Spring2017/WelcomeController HTTP/1.1" 500 3178 http-bio-8080-exec-10 8
-0:0:0:0:0:0:0:1 - - [20/Feb/2017:21:15:19 -0700] "POST /Spring2017/WelcomeController HTTP/1.1" 500 3178 http-bio-8080-exec-1 63

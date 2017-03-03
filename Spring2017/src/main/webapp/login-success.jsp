@@ -15,9 +15,18 @@
 	//out.print("Welcome " + bean.getName());
 	
 	out.println("HI THERE");
-	String name = "Joe";
+	String name = bean.getName();
 	out.println(name);
-
+	out.println("Authenticated with password: " + bean.getPassword());
 %>
+<a href="?account=<% 
+	//THIS IS NOT WORKING, WHY NOT?
+	out.println(bean.getName()); 
+%>">View my account</a>
+
+<!--  not working
+	<p>Welcome, ${name}</p>
+	 ${password}
+ -->
 </body>
 </html>

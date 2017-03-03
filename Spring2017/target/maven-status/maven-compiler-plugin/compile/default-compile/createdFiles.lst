@@ -1,3 +1,5 @@
 spring/config/AppConfig.class
 spring/config/AppInitializer.class
+spring/controllers/LoginController.class
+spring/controllers/LoginBean.class
 spring/controllers/WelcomeController.class

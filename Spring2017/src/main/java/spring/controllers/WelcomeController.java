@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class WelcomeController extends HttpServlet {
-	
+	/*
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
@@ -30,9 +30,9 @@ public class WelcomeController extends HttpServlet {
 		boolean status = bean.validate();
 		if(status)
 		{
-			RequestDispatcher rd = request.getRequestDispatcher("login-success.jsp");
+			//RequestDispatcher rd = request.getRequestDispatcher("login-success.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("login-error.jsp");
 			rd.forward(request,  response);
-			
 		}
 		else {
 			RequestDispatcher rd = request.getRequestDispatcher("login-error.jsp");
@@ -50,4 +50,5 @@ public class WelcomeController extends HttpServlet {
 		model.addAttribute("name", "Johnny Cheng");
 		return "welcomeMessage";
 	}
+	*/
 }

@@ -7,7 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<p>Welcome, ${name}</p>
+	<p>Welcome</p>
+	The bean thinks your name is: ${beanName}<br>
+	The default name is set to: ${defaultName}<br>
+	
 	I made it to welcomeMessage.jsp
 </body>
 </html>

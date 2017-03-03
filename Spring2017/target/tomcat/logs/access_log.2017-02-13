@@ -1,3 +1,0 @@
-0:0:0:0:0:0:0:1 - - [13/Feb/2017:11:58:51 -0700] "GET /Spring2017/Spring2017/welcome HTTP/1.1" 404 1009 http-bio-8080-exec-1 58
-0:0:0:0:0:0:0:1 - - [13/Feb/2017:11:58:58 -0700] "GET /Spring2017/Spring2017/welcome HTTP/1.1" 404 1009 http-bio-8080-exec-3 2
-0:0:0:0:0:0:0:1 - - [13/Feb/2017:11:59:02 -0700] "GET /Spring2017/welcome HTTP/1.1" 200 317 http-bio-8080-exec-4 644
