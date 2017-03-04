@@ -46,6 +46,8 @@ public class LoginController extends HttpServlet{
 		//return "welcomeMessage";
 	}	
 	
+	
+	
 /*
 	@RequestMapping(value = "/login_validation", method = RequestMethod.GET)
 	public ModelAndView LoginBean() 
@@ -58,11 +60,13 @@ public class LoginController extends HttpServlet{
 	public ModelAndView LoginBean() 
 public String addUser(@ModelAttribute("SpringWeb") LoginBean LoginBean,
 	ModelMap model)
-	
+
+		public String showAccount(@ModelAttribute("SpringWeb") LoginBean LoginBean,
+			ModelMap model)
+
 	 */
 	@RequestMapping(value = "/login_validation", method = RequestMethod.GET)
-	public String showAccount(@ModelAttribute("SpringWeb") LoginBean LoginBean,
-			ModelMap model)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		//problem 1: doGet returns "void", so can not return a view
 		//problem 2: showAccount receives an empty loginbean, why is it empty?
@@ -70,16 +74,27 @@ public String addUser(@ModelAttribute("SpringWeb") LoginBean LoginBean,
 		//question: how do I get information out of the "get"?
 		//question: how do I get information into the loginbean?
 		
-		String name = "TEST";
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		String name = request.getParameter("account");
+		request.setAttribute("name", name);
+		
 		if(name.equals(""))
 		{
 			name = "UNKNOWN";
 		}
-		model.addAttribute("defaultName", name);
-		model.addAttribute("beanName", LoginBean.getName());
-		model.addAttribute("password", LoginBean.getPassword());
+		RequestDispatcher rd = request.getRequestDispatcher("account.jsp");
+		//RequestDispatcher rd = request.getRequestDispatcher("login-error.jsp");
+		rd.forward(request,  response);
 		
-		return "welcomeMessage";
+		
+		
+		//model.addAttribute("defaultName", name);
+		//model.addAttribute("beanName", LoginBean.getName());
+		//model.addAttribute("password", LoginBean.getPassword());
+		
+		//return "welcomeMessage";
 	}
 	
 }
+

@@ -8,8 +8,18 @@
 	  <servlet-name>s1</servlet-name>
 	  <servlet-class>spring.controllers</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>CommentController</servlet-name>
+  	<display-name>CommentController</display-name>
+  	<description></description>
+  	<servlet-class>spring.controllers.CommentController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>s1</servlet-name>
   	<url-pattern>/WelcomeController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CommentController</servlet-name>
+  	<url-pattern>/CommentController</url-pattern>
   </servlet-mapping>
 </web-app>
