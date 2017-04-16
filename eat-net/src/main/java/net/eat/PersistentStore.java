@@ -7,23 +7,36 @@ import java.sql.Statement;
 
 import com.mysql.jdbc.exceptions.jdbc4.CommunicationsException;
 
-/*
 public abstract class PersistentStore {
-	protected final String table;
-	protected final String driver;
-	protected final String url;
-	protected final String username;
-	protected final String password;
-	protected Connection databaseConnection;
+	static Connection connection;
 
-	protected PersistentStore() {
+	public PersistentStore() {
 	}
 	
-	public <K, V> void insert(K key, V value) {
-	}
-}
+    public static void insert(String name, String password) {
+        String driver = "com.mysql.jdbc.Driver";
+        String url = "jdbc:mysql://localhost:3306/eatnet";
 
-public class RestaurantStore extends PersistentStore {
-	private RestaurantStore(String driver
+        try {
+            Class.forName(driver);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        try {
+            PersistentStore.connection = DriverManager.getConnection(url, "peter", "");
+        } catch(CommunicationsException e) {
+            System.out.println("Error connecting to database: " + e);
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+
+        String insert = "insert into test (name, password) values (\"" + name + "\", \"" + password + "\");";
+        try {
+            Statement statement = PersistentStore.connection.createStatement();
+            int result = statement.executeUpdate(insert);
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+    }
 }
-*/

@@ -18,6 +18,7 @@
 %>
 </p>
 <img src="images/<% out.print((String)request.getAttribute("name")); %>.jpg">
+<img src="images/<c: ${name} />
 <!--  not working
 	<p>Welcome, ${name}</p>
 	 ${password}

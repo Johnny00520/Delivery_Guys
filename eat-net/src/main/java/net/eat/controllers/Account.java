@@ -1,5 +1,6 @@
 package net.eat.controllers;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -21,6 +22,7 @@ public class Account {
 		return pass;
 	}
     public String pictureName() {
+        return "index";
     }
 
     @GetMapping("/account")
@@ -28,5 +30,6 @@ public class Account {
                               @RequestParam("password") String password,
                               Model model) {
         Account account = new Account(name, password);
+        return "hello";
     }
 }
