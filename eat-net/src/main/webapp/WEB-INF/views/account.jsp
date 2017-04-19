@@ -1,4 +1,4 @@
-<%@ page import="spring.controllers.LoginBean" %>
+<%@ page import="net.eat.controllers.LoginBean" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,11 +18,12 @@
 %>
 </p>
 <img src="images/<% out.print((String)request.getAttribute("name")); %>.jpg">
-<img src="images/<c: ${name} />
-<!--  not working
+  
+<!--  <img src="images/<c: ${name} /> 
+  not working
 	<p>Welcome, ${name}</p>
 	 ${password}
- -->
+
  
  <form method="POST" action="post_comment">
  	<input type="text" name="comment">
@@ -30,3 +31,4 @@
  </form>
 </body>
 </html>
+-->
