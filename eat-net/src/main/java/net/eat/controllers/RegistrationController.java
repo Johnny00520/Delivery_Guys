@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import net.eat.restaurant.RestaurantStore;
 import net.eat.restaurant.Restaurant;
 import net.eat.PersistentStore;
+import net.eat.BusinessUser;
+import net.eat.BusinessUserStore;
 import java.sql.SQLException;
 
 @Controller
@@ -22,6 +24,8 @@ public class RegistrationController {
                         Model model) throws Exception {
         try {
             Restaurant newRestaurant = RestaurantStore.addNewRestaurant(restaurantName);
+            String name = givenName + " " + familyName;
+            BusinessUser newBusinessUser = BusinessUserStore.addNewBusinessUser(userName, passWord, name, newRestaurant);
         } catch (SQLException e) {
             System.out.println(e.getSQLState() + " " + e.getErrorCode());
             return "unimplemented";

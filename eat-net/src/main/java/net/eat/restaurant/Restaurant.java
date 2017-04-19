@@ -8,4 +8,12 @@ public class Restaurant {
         this.id = id;
         this.name = name;
     }
+
+    public int id() {
+        return this.id;
+    }
+
+    public String name() {
+        return this.name;
+    }
 }
