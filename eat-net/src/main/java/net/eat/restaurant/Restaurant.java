@@ -1,11 +1,11 @@
 package net.eat.restaurant;
 
-import java.util.ArrayList;
-
 public class Restaurant {
-	public int id;
-	public String name;
-	public ArrayList<Item> menu;
-	public String description;
-	public int rating;
+    private int id;
+	private String name;
+
+    public Restaurant(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

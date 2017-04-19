@@ -44,6 +44,10 @@
 			    <td>Password</td>
 			    <td><input type="text" name="passWord" value="" /></td>
 			  </tr>
+			  <tr>
+			    <td>Restaurant Name</td>
+			    <td><input type="text" name="restaurantName" value="" /></td>
+			  </tr>
 			  <tr>e
 			    <td><input type="submit" value="Submit" /></td>
 			    <td><input type="reset" value="Reset" /></td>

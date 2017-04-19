@@ -12,7 +12,6 @@ import net.eat.PersistentStore;
 public class IndexController {
 	@GetMapping("/")
 	public String index(Model model) {
-		model.addAttribute("names", RestaurantStore.names());
 		return "index";
 	}
 

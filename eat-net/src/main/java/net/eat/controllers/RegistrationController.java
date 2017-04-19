@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import net.eat.restaurant.RestaurantStore;
+import net.eat.restaurant.Restaurant;
 import net.eat.PersistentStore;
+import java.sql.SQLException;
 
 @Controller
 public class RegistrationController {
@@ -16,8 +18,16 @@ public class RegistrationController {
                         @RequestParam(value="email") String email,
                         @RequestParam(value="userName") String userName,
                         @RequestParam(value="passWord") String passWord,
-                        Model model) {
-        System.out.println(email);
-		return "registration";
+                        @RequestParam(value="restaurantName") String restaurantName,
+                        Model model) throws Exception {
+        try {
+            Restaurant newRestaurant = RestaurantStore.addNewRestaurant(restaurantName);
+        } catch (SQLException e) {
+            System.out.println(e.getSQLState() + " " + e.getErrorCode());
+            return "unimplemented";
+        }
+        // insert business user
+        // insert restaurant items
+		return "registration2";
 	}
 }
