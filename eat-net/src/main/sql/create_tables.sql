@@ -1,10 +1,12 @@
-create table eatnet.Restaurants (
+use eatnet;
+
+create table Restaurants (
     id int auto_increment not null,
     name varchar(32) not null,
     primary key (id)
 );
 
-create table eatnet.BusinessUsers (
+create table BusinessUsers (
     id int auto_increment not null,
     username varchar(32) not null unique,
     password varchar(32) not null,
@@ -16,7 +18,7 @@ create table eatnet.BusinessUsers (
     primary key (id)
 );
 
-create table eatnet.Items (
+create table Items (
     id int auto_increment not null,
     name varchar(32) not null,
     price float not null,
