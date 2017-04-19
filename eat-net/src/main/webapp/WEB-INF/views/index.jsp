@@ -20,7 +20,7 @@
 		<!-- <input type="submit" value="Sign up"> -->
 		<!-- <a href="sign-up.jsp">Sign up</a> -->
 		</form>
-		<form action="sig.jsp" method="post">
+		<form action="/signup" method="get">
 			<h2><input type="submit" value="Sign up"></h2>
 		</form>
 	</body>

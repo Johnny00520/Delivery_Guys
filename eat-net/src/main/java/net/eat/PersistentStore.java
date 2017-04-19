@@ -31,7 +31,7 @@ public abstract class PersistentStore {
             System.out.println(e);
         }
 
-        String insert = "insert into test (name, password) values (\"" + name + "\", \"" + password + "\");";
+        String insert = "insert into Restaurants (name) values (\"" + name + "\", \"" + password + "\");";
         try {
             Statement statement = PersistentStore.connection.createStatement();
             int result = statement.executeUpdate(insert);

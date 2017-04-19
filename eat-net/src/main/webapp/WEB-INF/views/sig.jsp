@@ -16,7 +16,7 @@
 	</style>
 	</head>
 	<body>
-		<form method="post" action="registration.jsp">
+		<form method="post" action="/registration">
 			h2 <table border="1" width="30%" cellpadding="5">
 			<thead>
 			  <tr>
@@ -44,7 +44,7 @@
 			    <td>Password</td>
 			    <td><input type="text" name="passWord" value="" /></td>
 			  </tr>
-			  <tr>
+			  <tr>e
 			    <td><input type="submit" value="Submit" /></td>
 			    <td><input type="reset" value="Reset" /></td>
 			  </tr>

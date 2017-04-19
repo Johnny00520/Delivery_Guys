@@ -13,7 +13,7 @@
 	int i = st.executeUpdate("insert into members(first_name, last_name, email, user_name, password, registrationDate) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + pwd + "', CURDATE())");
 	if (i > 0)
 	{
-		response.sendRedirect("welcomeMessage.jsp");
+		response.sendRedirect("welcomeMessage");
 	}
 	else
 	{
