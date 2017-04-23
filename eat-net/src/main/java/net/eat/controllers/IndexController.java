@@ -12,6 +12,6 @@ import net.eat.PersistentStore;
 public class IndexController {
 	@GetMapping("/")
 	public String index(Model model) {
-		return "index";
+		return "index2";
 	}
 }
