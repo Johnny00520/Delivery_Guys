@@ -23,5 +23,6 @@
 		<form action="/signup" method="get">
 			<h2><input type="submit" value="Sign up"></h2>
 		</form>
+        <img src="/resources/bender.jpg">
 	</body>
 </html>

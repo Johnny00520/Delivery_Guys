@@ -4,6 +4,7 @@ import org.springframework.context.annotation.*;
 import org.springframework.web.servlet.*;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.*;
+import org.springframework.web.servlet.resource.VersionResourceResolver;
 
 @Configuration
 @EnableWebMvc
@@ -26,4 +27,9 @@ public class AppConfig extends WebMvcConfigurerAdapter
 	{
 		configurer.enable();
 	}
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/resources/");
+    }
 }
