@@ -7,12 +7,25 @@ import java.sql.Statement;
 
 import com.mysql.jdbc.exceptions.jdbc4.CommunicationsException;
 
-public abstract class PersistentStore {
-	static Connection connection;
+public class MySqlConn {
+    private static final String DRIVER = "com.mysql.jdbc.Driver";
+	private Connection conn;
 
-	public PersistentStore() {
-	}
-	
+    public void connect(String host, String port, String database,
+                        String user, String password) throws SQLException
+    {
+        String url = "jdbc:mysql://" + host + ":" + port + "/" + database;
+        this.conn = DriverManager.getConnection(url, user, password);
+    }
+
+    public void insert(String table, String attributes, String tuple) throws SQLException {
+        String insert = "insert into " + table + " " + attributes + " values " + tuple + ";";
+        Statement statement = this.conn.createStatement();
+        int result = statement.executeUpdate(insert);
+        assert result == 0;
+    }
+
+    /*
     public static void insert(String name, String password) {
         String driver = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/eatnet";
@@ -39,4 +52,5 @@ public abstract class PersistentStore {
             System.out.println(e);
         }
     }
+    */
 }
