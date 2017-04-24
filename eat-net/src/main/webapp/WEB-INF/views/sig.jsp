@@ -17,7 +17,7 @@
 	</head>
 	<body>
 		<form method="post" action="/registration">
-			h2 <table border="1" width="30%" cellpadding="5">
+			<table border="1" width="30%" cellpadding="5">
 			<thead>
 			  <tr>
 				<th colspan="2">New User information</th>
@@ -48,7 +48,7 @@
 			    <td>Restaurant Name</td>
 			    <td><input type="text" name="restaurantName" value="" /></td>
 			  </tr>
-			  <tr>e
+			  <tr>
 			    <td><input type="submit" value="Submit" /></td>
 			    <td><input type="reset" value="Reset" /></td>
 			  </tr>
