@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import net.eat.restaurant.RestaurantStore;
 import net.eat.restaurant.Restaurant;
+import net.eat.PersistentStore;
 import net.eat.BusinessUser;
 import net.eat.BusinessUserStore;
 import java.sql.SQLException;
