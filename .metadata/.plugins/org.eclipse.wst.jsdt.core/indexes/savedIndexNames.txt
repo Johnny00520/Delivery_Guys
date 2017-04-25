@@ -1,7 +1,0 @@
-INDEX VERSION 1.3+/Users/user/Desktop/OOD/Eat-net/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-3159157992.index
-1750363926.index
-897391048.index
-659793197.index
-381741838.index
-2669573762.index
