@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -18,10 +21,10 @@
     <link href="/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
+    <link href="/css/jumbotron-narrow.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -42,59 +45,46 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Eat-net</a>
+          <a class="navbar-brand" href="#">Project name</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" action="/login" method="POST">
-            <div class="form-group">
-              <input type="text" placeholder="Username" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Log in</button>
-            
-            <a class="navbar-form narbar-right" href="/signup" role="botton">Sign up</a>
-            <!-- <button type="submit" class="btn btn-success">Sign up</button> -->
-           </form>
-          
+          <c:choose>
+            <c:when test="${username == \"\"}">
+              <form class="navbar-form navbar-right" action="/login" method="post">
+                <div class="form-group">
+                  <input type="text" placeholder="Username" name="username" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="password" placeholder="Password" name="password" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success">Sign in</button>
+              </form>
+              <div class="navbar-link navbar-right">
+                  <a href="/signup">Signup</a>
+              </div>
+            </c:when>
+            <c:otherwise>
+              <div class="navbar-text navbar-right">
+                  <p>Hello, <c:out value="${username}"/></p>
+              </div>
+            </c:otherwise>
+          </c:choose>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <div class="container">
-        <h1>Welcome to Eat-net technology!</h1>
-        <p>This is a web App for transmitting customers' food list to local restaurants.</p>
-        <p><a class="btn btn-primary btn-lg" href="/static/learn-more.html" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>
-
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Working </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-
+      <ul class="list-group">
+        <li class="list-group-item active">Hello</li>
+        <li class="list-group-item">Hello</li>
+        <li class="list-group-item">Hello</li>
+        <li class="list-group-item">Hello</li>
+        <li class="list-group-item">Hello</li>
+      </ul>
       <hr>
-
       <footer>
-        <p>&copy;University of Colorado Boulder</p>
+        <p>&copy; 2016 Company, Inc.</p>
       </footer>
     </div> <!-- /container -->
 
