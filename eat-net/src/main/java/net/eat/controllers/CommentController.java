@@ -60,7 +60,7 @@ public class CommentController {
     						@RequestParam("comment") String paragraph,
     						Model model) {
     	comment comment = new comment(name, restaurantName, email, paragraph);
-    	return "Hello";
+    	return "index2";
     }
     
     @GetMapping("/comment")

@@ -1,5 +1,8 @@
 package net.eat.controllers;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,22 +14,20 @@ import net.eat.restaurant.RestaurantStore;
 
 @Controller
 public class IndexController {
-	@PostMapping("/")
-	public String index(@RequestParam(value="dname", defaultValue="") String username,
-                        @RequestParam(value="url", defaultValue="") String durl,
-                        @RequestParam(value="comment", defaultValue="") String comment,
-                        Model model) {
-        model.addAttribute("username", username);
-        model.addAttribute("password", password);
-        model.addAttribute("shouldDisplayComment", true);
-        model.addAttribute("comment", comment);
-        return "index2";
-	}
+    private static ArrayList<String> GetComments() {
+        String[] comments = new String[] {
+            "I hate all food at this restaurant",
+            "I hate the guy to the left of me",
+            "I didn't even eat here",
+        };
+        return new ArrayList<String>(Arrays.asList(comments));
+    }
+
 
     @GetMapping("/")
-    public String displayNoComment(Model model) {
-    	model.addAttribute("shouldDisplayComment", false);
-    	
-		return "/";
+    public String index(Model model) {
+    	ArrayList<String> comments = GetComments();
+        model.addAttribute("comments", comments);
+		return "index2";
     }
 }
