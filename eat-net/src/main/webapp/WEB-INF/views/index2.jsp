@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
+<!DOCTYPE HTML>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -50,10 +52,11 @@
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" action="/login" method="POST">
             <div class="form-group">
-              <input type="text" placeholder="Username" class="form-control">
+              <input type="text" name="name" placeholder="Username" class="form-control">
+       
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+              <input type="password" name="password" placeholder="Password" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">Log in</button>
             
@@ -79,7 +82,7 @@
       <div class="row">
           <c:forEach var="comment" items="${comments}">
             <div class="col-md-4">
-              <h2>Heading</h2>
+              <h2>Restaurant name or Eat-net</h2>
               <p><c:out value="${comment}"/></p>
               <p><a class="btn btn-default" href="#" role="button">View more &raquo;</a></p>
             </div>

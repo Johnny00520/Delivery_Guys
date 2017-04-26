@@ -24,15 +24,12 @@ import org.springframework.ui.ModelMap;
 @Controller
 public class LoginController {
 
-    @PostMapping("/login_validation")
+	@PostMapping("/login")
+    //@PostMapping("/login_validation")
 	public String doPost(@RequestParam("name") String name,
                          @RequestParam("password") String password,
-                         Model model) throws ServletException, IOException {
+                         Model model) {
         System.out.println("RUNNING LOGIN VALIDATION");
-		//response.setContentType("text/html");
-		//PrintWriter out = response.getWriter();
-		//String name = request.getParameter("name");
-		//String password = request.getParameter("password");
         model.addAttribute("name", name);
         model.addAttribute("password", password);
 		LoginBean bean = new LoginBean();
@@ -42,14 +39,9 @@ public class LoginController {
 		boolean status = bean.validate();
 		if(status)
 		{
-			//RequestDispatcher rd = request.getRequestDispatcher("/login-success.jsp");
-			//RequestDispatcher rd = request.getRequestDispatcher("login-error.jsp");
-			//rd.forward(request,  response);
             return "login-success";
 		}
 		else {
-			//RequestDispatcher rd = request.getRequestDispatcher("/login-error.jsp");
-			//rd.forward(request,  response);
             return "login-error";
 		}
 		//return "welcomeMessage";

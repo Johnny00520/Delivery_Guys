@@ -3,13 +3,6 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<!--  <link href="/css/comment.css" rel="stylesheet">
-<link href="/css/bootstrap.min.css" rel="stylesheet">
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Comment page in JSP file</title>
--->
-<head>
 <!--  <meta charset = "utf-8"> -->
 <meta name = "viewport" content = "width=device-width, initial-scale=1">
 <link href = "css/bootstrap.css" rel = "stylesheet" type = "text/css"/>
@@ -44,6 +37,7 @@
 </div>
 
 <p>Your email address will not be published. Required fields are marked *</p>
+<p>Please leave your comments for our website.</p>
 
 <!------------Form Start---------->
 
@@ -76,6 +70,7 @@
 </div>
 
 <!-------------------Reply Section------->
+<!--  
 <div id="second">
 <div class="row">
 <div class="col-md-2">
@@ -93,6 +88,7 @@
 </div>
 
 </div>
+-->
 
 </body>
 </html>
