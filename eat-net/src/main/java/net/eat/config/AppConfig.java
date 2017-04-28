@@ -27,14 +27,7 @@ public class AppConfig extends WebMvcConfigurerAdapter
 	{
 		configurer.enable();
 	}
-	
-	@Override
-	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/login").setViewName("login/login");
-		registry.addViewController("/partialsChats").setViewName("chat/partialsChats");
-		registry.addViewController("/partialsRooms").setViewName("chat/partialsRooms");
-	}
-	
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/images/**").addResourceLocations("/images/");
