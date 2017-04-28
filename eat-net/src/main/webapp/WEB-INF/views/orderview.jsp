@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Eat-net</title>
+    <title>View Order</title>
 </head>
 <body>
 	<h1>Eat-net Restaurants</h1>
