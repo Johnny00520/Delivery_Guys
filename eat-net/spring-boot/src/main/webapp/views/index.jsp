@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -47,12 +49,10 @@
 
       <div class="row">
         <div class="col-md-4">
-          <ul class="list-group">
-            <li class="list-group-item">Hello</li>
-            <li class="list-group-item">Hello</li>
-            <li class="list-group-item">Hello</li>
-            <li class="list-group-item">Hello</li>
-            <li class="list-group-item">Hello</li>
+          <ul class="list-group" name="restaurants">
+              <c:forEach var="restaurant" items="${restaurants}">
+                <li class="list-group-item">${restaurant.getName()}</li>
+              </c:forEach>
           </ul>
         </div>
         <div class="col-md-8">
