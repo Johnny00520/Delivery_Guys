@@ -11,20 +11,23 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.core.userdetails.User;
 
+import org.springframework.security.authentication.AuthenticationProvider;
+
+import javax.sql.DataSource;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
     @Bean
-    public UserDetailsService userDetailsService() {
-        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-        manager.createUser(User.withUsername("user").password("password").roles("USER").build());
-        return manager;
+    public MyUserDetailsService myUserDetailsService() {
+        return new MyUserDetailsService();
     }
 
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-            .anyRequest()
-            .authenticated()
+            .antMatchers("/", "/signup", "/restaurant/**", "/css/**", "/fonts/**", "/js/**").permitAll()
+            .anyRequest().authenticated()
             .and()
             .formLogin()
             .loginPage("/login")
