@@ -49,17 +49,19 @@
     <div class="row">
         <div class="col-md-4 col-offset-4">
             <c:choose>
-                <c:when test="${error}">
+                <c:when test="${param.error != null}">
                     <p>Invalid username/password</p>
                 </c:when>
-                <c:when test="${logout}">
+                <c:when test="${param.logout != null}">
                     <p>Logged out</p>
                 </c:when>
                 <c:otherwise>
-                    <form action="/login" method="post">
+                    <c:url value="/login" var="loginUrl"/>
+                    <form action="${loginUrl}" method="post">
                         <div><label>Username: <input type="text" name="username"/></label></div>
-                        <div><label>Password: <input type="text" name="password"/></label></div>
-                        <div><input type="submit" value="Sign in"/></div>
+                        <div><label>Password: <input type="password" name="password"/></label></div>
+                        <div><input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/></div>
+                        <div><button class="btn" type="submit" value="Sign in"/></div>
                     </form>
                 </c:otherwise>
             </c:choose>
