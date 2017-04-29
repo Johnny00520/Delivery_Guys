@@ -50,21 +50,16 @@
       <div class="row">
         <div class="col-md-4">
           <ul class="list-group" name="restaurants">
-              <c:forEach var="restaurant" items="${restaurants}">
-                <li class="list-group-item">${restaurant.getName()}</li>
-              </c:forEach>
+            <c:forEach var="restaurant" items="${restaurants}">
+              <li class="list-group-item">${restaurant.getName()}</li>
+            </c:forEach>
           </ul>
         </div>
         <div class="col-md-8">
           <ul class="list-group">
-            <li class="list-group-item">Hello</li>
-            <li class="list-group-item">Hello</li>
-            <li class="list-group-item">Hello</li>
-            <li class="list-group-item">Hello</li>
-            <li class="list-group-item">Hello</li>
-            <li class="list-group-item">Hello</li>
-            <li class="list-group-item">Hello</li>
-            <li class="list-group-item">Hello</li>
+            <c:forEach var="item" items="${items}">
+              <li class="list-group-item">${item.getName()}</li>
+            </c:forEach>
           </ul>
         </div>
       </div>

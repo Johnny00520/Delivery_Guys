@@ -5,16 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.OneToMany;
-import javax.persistence.FetchType;
-import javax.persistence.CascadeType;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
 import javax.validation.constraints.NotNull;
 
-import java.util.Set;
-
 @Entity
-@Table(name = "restaurants")
-public class Restaurant {
+@Table(name = "items")
+public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -22,12 +19,13 @@ public class Restaurant {
     @NotNull
     private String name;
 
-    @OneToMany(cascade=CascadeType.ALL, mappedBy="restaurant", fetch=FetchType.LAZY)
-    private Set<Item> items;
+    @ManyToOne(optional=false)
+    @JoinColumn(name="restaurant")
+    private Restaurant restaurant;
 
-    public Restaurant(){}
+    public Item(){}
 
-    public Restaurant(String name) {
+    public Item(String name) {
         this.name = name;
     }
 
