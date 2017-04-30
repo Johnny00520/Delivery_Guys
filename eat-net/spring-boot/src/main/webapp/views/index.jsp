@@ -45,6 +45,7 @@
           </ul>
         </nav>
         <h3 class="text-muted"><i>Eat-net</i></h3>
+        <h3><c:out value="${shoppingcart.data}"/></h3>
       </div>
 
       <div class="row">

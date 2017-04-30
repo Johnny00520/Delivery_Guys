@@ -17,13 +17,21 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 
 import javax.sql.DataSource;
+import org.springframework.session.web.http.HttpSessionStrategy;
 
 @Configuration
-@EnableWebMvc
 @EnableRedisHttpSession
-public class AppConfig extends WebMvcConfigurerAdapter {
+@EnableWebMvc
+public class Config extends WebMvcConfigurerAdapter {
+    @Bean
+    public JedisConnectionFactory connectionFactory() {
+        return new JedisConnectionFactory();
+    }
+
 	@Bean
 	public ViewResolver viewResolver() 
 	{
