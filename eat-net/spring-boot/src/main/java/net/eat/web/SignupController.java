@@ -2,6 +2,10 @@ package net.eat.web;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.ServletException;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,10 +31,12 @@ public class SignupController {
     public String post(@RequestParam(value="username") String username,
                        @RequestParam(value="password") String password,
                        @RequestParam(value="name") String name,
-                       Model model)
+                       Model model,
+                       HttpServletRequest request) throws ServletException
     {
         Owner owner = new Owner(username, password, name);
         this.owners.save(owner);
-        return "userhome";
+        request.login(username, password);
+        return "redirect:/home";
     }
 }

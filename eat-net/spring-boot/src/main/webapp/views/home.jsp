@@ -47,23 +47,9 @@
         </div>
 
     <div class="row">
-        <div class="col-md-4 col-offset-4">
-            <c:choose>
-                <c:when test="${param.error != null}">
-                    <p>Invalid username/password</p>
-                </c:when>
-                <c:when test="${param.logout != null}">
-                    <p>Logged out</p>
-                </c:when>
-                <c:otherwise>
-                    <form action="/login" method="post">
-                        <div><label>Username: <input type="text" name="username"/></label></div>
-                        <div><label>Password: <input type="password" name="password"/></label></div>
-                        <div><input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/></div>
-                        <div><button class="btn" type="submit" value="Sign in"/></div>
-                    </form>
-                </c:otherwise>
-            </c:choose>
+        <div class="col-md-4 col-offset-4 text-left">
+            <h1>Look it's your name</h1>
+            <p><c:out value="${owner.getName()}"/></p>
         </div>
     </div>
 
