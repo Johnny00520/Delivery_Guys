@@ -27,3 +27,48 @@ restaurant owners can configure and customize the website
 Admin can search for a customer by name
 Admin can view a customer’s order
 
+## Dependencies
+- Redis
+- MySQL
+
+You need to have a MySQL server running on port 33306,
+and a database called `eatnet`,
+and a root MySQL user with no password. Alternatively,
+you can edit `application.properties`, replacing
+`spring.datasource.username` and `spring.datasource.password`
+without your MySQL username and password.
+
+
+````bash
+mysql> create database eatnet;
+````
+
+The application will take care of creating tables when it starts up.
+
+You also need to have Redis installed, and a Redis server running
+in the background on port 6379.
+
+````bash
+redis-server &
+````
+
+Lastly, you also need to have JDK 1.7+ installed. Maven is not
+necessary, as there is a `mvnw` script in the build directory
+for you to use. If you do have Maven installed though,
+that will also work.
+
+Go to the build directory and execute:
+
+````bash
+./mvnw spring-boot:run
+````
+
+or
+
+````bash
+mvn spring-boot:run
+````
+
+This should start the server on port 8443. You can then
+open a web browser and go to `localhost:8443` to
+use the website.
