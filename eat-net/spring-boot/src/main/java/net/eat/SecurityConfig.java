@@ -25,12 +25,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         
     }
-    /*
+
     @Bean
     public MyUserDetailsService myUserDetailsService() {
         return new MyUserDetailsService();
     }
-    */
 
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()

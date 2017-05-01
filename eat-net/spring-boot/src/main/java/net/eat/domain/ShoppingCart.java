@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
 import org.springframework.stereotype.Component;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 
 import java.io.Serializable;
 import java.lang.Long;
@@ -22,7 +23,9 @@ public class ShoppingCart implements Serializable {
 
     public Long data;
 
-    public ShoppingCart(){}
+    public ShoppingCart() {
+        this.data = new Long(777);
+    }
 
     public static ShoppingCart empty() {
         ShoppingCart cart = new ShoppingCart();
