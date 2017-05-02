@@ -44,6 +44,6 @@ public class LoginController {
     @RequestMapping("/logout")
     public String logout(HttpServletRequest request) throws ServletException {
         request.logout();
-        return "redirect:/index";
+        return "redirect:/";
     }
 }
