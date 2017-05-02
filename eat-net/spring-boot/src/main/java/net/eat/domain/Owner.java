@@ -28,6 +28,7 @@ public class Owner {
     private String password;
 
     @OneToOne
+    @JoinColumn(name="restaurant")
     private Restaurant restaurant;
 
     @NotNull

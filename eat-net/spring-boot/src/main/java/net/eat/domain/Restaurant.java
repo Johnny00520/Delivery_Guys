@@ -29,8 +29,7 @@ public class Restaurant {
     @OneToMany(cascade=CascadeType.ALL, mappedBy="restaurant", fetch=FetchType.LAZY)
     private Set<Item> items;
 
-    @OneToOne
-    @PrimaryKeyJoinColumn
+    @OneToOne(cascade=CascadeType.ALL, mappedBy="restaurant")
     private Owner owner;
 
     public Restaurant(){}
