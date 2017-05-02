@@ -34,11 +34,18 @@ public class ShoppingCartController {
     private ShoppingCart cart;
 
     @PostMapping("/cart")
-    public String update(@RequestParam(value="itemName") String itemName,
+    public String update(@RequestParam(value="item") String itemName,
+                         @RequestParam(value="count") Integer count,
                          HttpSession session, Model model) {
-        model.addAttribute("restaurants", this.restaurants.findAll());
-        model.addAttribute("items", this.items.findAll());
+        Item item = this.items.findByName(itemName);
+        this.cart.addItem(item, count);
+        return "redirect:/cart";
+    }
+
+    @GetMapping("/cart")
+    public String show(Model model) {
+        model.addAttribute("cartIsEmpty", this.cart.isEmpty());
         model.addAttribute("cart", this.cart);
-        return "index";
+        return "cart";
     }
 }

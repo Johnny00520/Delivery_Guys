@@ -43,4 +43,8 @@ public class ShoppingCart implements Serializable {
     public HashMap<Item, Integer> getItems() {
         return this.items;
     }
+
+    public boolean isEmpty() {
+        return this.items.size() == 0;
+    }
 }
