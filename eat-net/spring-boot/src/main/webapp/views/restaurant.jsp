@@ -54,12 +54,12 @@
       </div>
 
       <div class="row">
-        <div class="col-md-8 col-offset-2">
-          <ul class="list-group">
-            <c:forEach var="item" items="${items}">
-              <li class="list-group-item">${item.getName()}</li>
-            </c:forEach>
-          </ul>
+        <div class="col-md-4 col-md-4">
+            <div class="list-group">
+                <c:forEach var="item" items="${items}">
+                    <a class="list-group-item list-group-item-action" href="/cart/add?item=${item.getName()}&count=1">${item.getName()} ${item.getPrice()}</a>
+                </c:forEach>
+            </div>
         </div>
       </div>
 

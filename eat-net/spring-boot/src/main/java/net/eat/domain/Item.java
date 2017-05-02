@@ -46,4 +46,8 @@ public class Item implements Serializable {
     public float getPrice() {
         return this.price;
     }
+
+    public Restaurant getRestaurant() {
+        return this.restaurant;
+    }
 }

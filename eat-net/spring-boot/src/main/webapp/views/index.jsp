@@ -40,9 +40,9 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation"><a href="/home">Home</a></li>
-            <li role="presentation"><a href="/signup">Signup</a></li>
-            <li role="presentation"><a href="/login">Login</a></li>
+            <li name="navbar-li-elem" role="presentation"><a href="/home">Home</a></li>
+            <li name="navbar-li-elem" role="presentation"><a href="/signup">Signup</a></li>
+            <li name="navbar-li-elem" role="presentation"><a href="/login">Login</a></li>
           </ul>
         </nav>
         <h3 class="text-muted"><i>Eat-net</i></h3>
@@ -51,18 +51,18 @@
 
       <div class="row">
         <div class="col-md-4">
-          <ul class="list-group" name="restaurants">
+          <div class="list-group" name="restaurants">
             <c:forEach var="restaurant" items="${restaurants}">
-              <li class="list-group-item">${restaurant.getName()}</li>
+            <a class="list-group-item list-group-item-action" href="/restaurant/${restaurant.getName()}">${restaurant.getName()}</a>
             </c:forEach>
-          </ul>
+          </div>
         </div>
         <div class="col-md-8">
-          <ul class="list-group">
+          <div class="list-group">
             <c:forEach var="item" items="${items}">
-            <li class="list-group-item"><p>${item.getName()}</p><a href="/cart/add?item=${item.getName()}&count=1">Add to cart</a></li>
+            <a class="list-group-item list-group-item-action" href="/cart/add?item=${item.getName()}&count=1">${item.getName()} ${item.getPrice()}</a>
             </c:forEach>
-          </ul>
+          </div>
         </div>
       </div>
 
@@ -76,8 +76,12 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
     <script type="application/javascript">
+
+function addtocart(name, count) {
+    location.href = "/cart/add?name=" + name + "&count=" + count;
+}
 function get_list_elements() {
-    return document.getElementsByTagName("li");
+    return document.getElementsByName("navbar-li-elem");
 }
 function append_active_to_class(element) {
     element.className = element.className.concat(" active");
