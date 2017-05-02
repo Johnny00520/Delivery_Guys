@@ -19,14 +19,18 @@ public class Item {
     @NotNull
     private String name;
 
+    @NotNull
+    private float price;
+
     @ManyToOne(optional=false)
     @JoinColumn(name="restaurant")
     private Restaurant restaurant;
 
     public Item(){}
 
-    public Item(String name) {
+    public Item(String name, float price) {
         this.name = name;
+        this.price = price;
     }
 
     public long getId() {
@@ -35,5 +39,9 @@ public class Item {
 
     public String getName() {
         return this.name;
+    }
+
+    public float getPrice() {
+        return this.price;
     }
 }
