@@ -34,10 +34,10 @@ public class ShoppingCartController {
     private ItemDao items;
 
     @Autowired
-    private ShoppingCart cart;
+    private OrderDao orders;
 
     @Autowired
-    private OrderDao orders;
+    private ShoppingCart cart;
 
     @GetMapping("/cart/add")
     public String update(@RequestParam(value="item") String itemName,
@@ -54,7 +54,6 @@ public class ShoppingCartController {
         return "redirect:/cart";
     }
 
-
     @GetMapping("/cart")
     public String show(Model model) {
         model.addAttribute("cartIsEmpty", this.cart.isEmpty());
@@ -66,7 +65,7 @@ public class ShoppingCartController {
     public String checkout(@RequestParam(value="purchaser") String purchaser, Model model) {
         ArrayList<Order> newOrders = Order.listFromCart(purchaser, this.cart);
         for (Order order: newOrders) {
-            this.orders.save(order);
+            HomeController.notifyNewOrder(this.orders, order);
         }
         model.addAttribute("neworders", newOrders);
         return "confirmation";

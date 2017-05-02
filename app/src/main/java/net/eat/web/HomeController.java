@@ -50,6 +50,7 @@ public class HomeController {
         return "home";
     }
 
-    public void notifyNewOrder(Order order) {
+    public static void notifyNewOrder(OrderDao orders, Order order) {
+        orders.save(order);
     }
 }
