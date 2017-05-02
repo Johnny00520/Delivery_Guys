@@ -39,7 +39,7 @@
         <div class="header clearfix">
             <nav>
                 <ul class="nav nav-pills pull-right">
-                    <li name="navbar-li-elem" role="presentation"><a href="/">Home</li>
+                    <li name="navbar-li-elem" role="presentation"><a href="/">Home</a></li>
                     <li name="navbar-li-elem" role="presentation"><a href="/cart">Cart</a></li>
                     <li name="navbar-li-elem" role="presentation"><a href="/home">Business Users</a></li>
                     <li name="navbar-li-elem" role="presentation"><a href="/signup">Signup</a></li>
@@ -51,14 +51,15 @@
 
     <div class="row">
         <div class="col-md-4 col-offset-4 text-left">
-            <h1>Look it's your name</h1>
-            <p>${owner.getName()}</p>
-            <p>Cart items</p>
-            <ul>
-                <c:forEach var="entry" items="${cart.getItems().entrySet()}">
-                    <li><p>${item.getKey()}, ${item.getValue()}</p></li>
+            <h1>Hello, ${owner.getRestaurant().getName()}</h1>
+            <h3>Outstanding orders</h3>
+            <ul class="list-group">
+                <c:forEach var="order" items="${orders}">
+                <li class="list-group-item">
+                    ${order.string()}
+                </li>
                 </c:forEach>
-            <ul>
+            </ul>
         </div>
     </div>
 

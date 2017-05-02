@@ -19,7 +19,10 @@ import net.eat.domain.Restaurant;
 import net.eat.domain.RestaurantDao;
 import net.eat.domain.Item;
 import net.eat.domain.ItemDao;
+import net.eat.domain.Order;
+import net.eat.domain.OrderDao;
 import net.eat.domain.ShoppingCart;
+import net.eat.web.HomeController;
 
 @Controller
 @Scope("request")
@@ -32,6 +35,9 @@ public class ShoppingCartController {
 
     @Autowired
     private ShoppingCart cart;
+
+    @Autowired
+    private OrderDao orders;
 
     @GetMapping("/cart/add")
     public String update(@RequestParam(value="item") String itemName,
@@ -54,5 +60,15 @@ public class ShoppingCartController {
         model.addAttribute("cartIsEmpty", this.cart.isEmpty());
         model.addAttribute("cart", this.cart);
         return "cart";
+    }
+
+    @PostMapping("/cart/checkout")
+    public String checkout(@RequestParam(value="purchaser") String purchaser, Model model) {
+        ArrayList<Order> newOrders = Order.listFromCart(purchaser, this.cart);
+        for (Order order: newOrders) {
+            this.orders.save(order);
+        }
+        model.addAttribute("neworders", newOrders);
+        return "confirmation";
     }
 }

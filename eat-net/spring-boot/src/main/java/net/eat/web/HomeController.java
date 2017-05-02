@@ -20,6 +20,8 @@ import java.util.logging.Logger;
 import net.eat.domain.Owner;
 import net.eat.domain.OwnerDao;
 import net.eat.domain.ShoppingCart;
+import net.eat.domain.Order;
+import net.eat.domain.OrderDao;
 
 @Controller
 @Scope("request")
@@ -28,14 +30,26 @@ public class HomeController {
     private OwnerDao owners;
 
     @Autowired
+    private OrderDao orders;
+
+    @Autowired
     private ShoppingCart cart;
 
     @GetMapping("/home")
     public String home(HttpServletRequest request, Model model) {
+        Logger logger = Logger.getLogger("MyLog");
         String username = request.getUserPrincipal().getName();
         Owner owner = this.owners.findByUsername(username);
+        ArrayList<Order> orders = this.orders.findAllByRestaurant(owner.getRestaurant());
+        logger.info("printing orders");
+        for (Order o: orders) {
+            logger.info(o.string());
+        }
         model.addAttribute("owner", owner);
-        model.addAttribute("cart", this.cart);
+        model.addAttribute("orders", orders);
         return "home";
+    }
+
+    public void notifyNewOrder(Order order) {
     }
 }

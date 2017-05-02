@@ -30,6 +30,9 @@ public class Restaurant implements Serializable {
     @OneToMany(cascade=CascadeType.ALL, mappedBy="restaurant", fetch=FetchType.LAZY)
     private Set<Item> items;
 
+    @OneToMany(cascade=CascadeType.ALL, mappedBy="restaurant", fetch=FetchType.LAZY)
+    private Set<Order> orders;
+
     @OneToOne(cascade=CascadeType.ALL, mappedBy="restaurant")
     private Owner owner;
 

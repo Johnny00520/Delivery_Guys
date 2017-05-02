@@ -40,7 +40,7 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li name="navbar-li-elem" role="presentation"><a href="/">Home</li>
+              <li name="navbar-li-elem" role="presentation"><a href="/">Home</a></li>
             <li name="navbar-li-elem" role="presentation"><a href="/cart">Cart</a></li>
             <li name="navbar-li-elem" role="presentation"><a href="/home">Business Users</a></li>
             <li name="navbar-li-elem" role="presentation"><a href="/signup">Signup</a></li>
@@ -64,6 +64,11 @@
                 </c:forEach>
                 <a class="list-group-item list-group-item-action" href="/cart/delete">Remove all items from cart</a>
               </div>
+                <form action="/cart/checkout" method="post">
+                    <div><label>Name: <input type="text" name="purchaser"/></label></div>
+                    <div><input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/></div>
+                    <div><button type="submit" class="btn btn-primary" type="submit" value="Buy now"/></div>
+                </form>
             </c:otherwise>
           </c:choose>
         </div>
