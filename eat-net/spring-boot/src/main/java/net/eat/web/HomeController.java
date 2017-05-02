@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.context.annotation.Scope;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -21,6 +22,7 @@ import net.eat.domain.OwnerDao;
 import net.eat.domain.ShoppingCart;
 
 @Controller
+@Scope("request")
 public class HomeController {
     @Autowired
     private OwnerDao owners;
@@ -31,9 +33,6 @@ public class HomeController {
     @GetMapping("/home")
     public String home(HttpServletRequest request, Model model) {
         String username = request.getUserPrincipal().getName();
-        Logger logger = Logger.getLogger("My-Logger");
-        logger.info("username: ");
-        logger.info(username);
         Owner owner = this.owners.findByUsername(username);
         model.addAttribute("owner", owner);
         model.addAttribute("cart", this.cart);

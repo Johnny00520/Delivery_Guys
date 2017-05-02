@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false" %>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -50,9 +51,10 @@
         <div class="col-md-4 col-offset-4 text-left">
             <h1>Look it's your name</h1>
             <p>${owner.getName()}</p>
+            <p>Cart items</p>
             <ul>
-                <c:forEach var="item" items="${cart.entrySet()}">
-                    <li 
+                <c:forEach var="entry" items="${cart.getItems().entrySet()}">
+                    <li><p>${item.getKey()}, ${item.getValue()}</p></li>
                 </c:forEach>
             <ul>
         </div>
