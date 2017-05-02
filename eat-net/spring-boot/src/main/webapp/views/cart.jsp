@@ -40,9 +40,10 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation"><a href="/home">Home</a></li>
-            <li role="presentation"><a href="/signup">Signup</a></li>
-            <li role="presentation"><a href="/login">Login</a></li>
+            <li name="navbar-li-elem" role="presentation"><a href="/cart">Cart</a></li>
+            <li name="navbar-li-elem" role="presentation"><a href="/home">Business User Home</a></li>
+            <li name="navbar-li-elem" role="presentation"><a href="/signup">Signup</a></li>
+            <li name="navbar-li-elem" role="presentation"><a href="/login">Login</a></li>
           </ul>
         </nav>
         <h3 class="text-muted"><i>Eat-net</i></h3>
@@ -56,11 +57,12 @@
               <h3>Your shopping cart is empty!</h3>
             </c:when>
             <c:otherwise>
-              <ul class="list-group">
+              <div class="list-group">
                 <c:forEach var="item" items="${cart.getItems().entrySet()}">
-                  <li class="list-group-item">${item.getKey().getName()}</li>
+                  <a class="list-group-item" href="#">${item.getKey().getName()} ${item.getKey().getPrice()}</a>
                 </c:forEach>
-              </ul>
+                <a class="list-group-item list-group-item-action" href="/cart/delete">Remove all items from cart</a>
+              </div>
             </c:otherwise>
           </c:choose>
         </div>

@@ -42,6 +42,13 @@ public class ShoppingCartController {
         return "redirect:/cart";
     }
 
+    @GetMapping("/cart/delete")
+    public String delete(HttpSession session, Model model) {
+        this.cart.clear();
+        return "redirect:/cart";
+    }
+
+
     @GetMapping("/cart")
     public String show(Model model) {
         model.addAttribute("cartIsEmpty", this.cart.isEmpty());

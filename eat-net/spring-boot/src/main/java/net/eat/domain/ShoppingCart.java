@@ -47,4 +47,8 @@ public class ShoppingCart implements Serializable {
     public boolean isEmpty() {
         return this.items.size() == 0;
     }
+
+    public void clear() {
+        this.items.clear();
+    }
 }
