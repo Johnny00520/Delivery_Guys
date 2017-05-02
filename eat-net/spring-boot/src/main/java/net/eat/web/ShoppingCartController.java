@@ -33,7 +33,7 @@ public class ShoppingCartController {
     @Autowired
     private ShoppingCart cart;
 
-    @PostMapping("/cart")
+    @GetMapping("/cart/add")
     public String update(@RequestParam(value="item") String itemName,
                          @RequestParam(value="count") Integer count,
                          HttpSession session, Model model) {

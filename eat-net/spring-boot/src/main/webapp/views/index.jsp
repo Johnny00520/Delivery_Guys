@@ -60,7 +60,7 @@
         <div class="col-md-8">
           <ul class="list-group">
             <c:forEach var="item" items="${items}">
-              <li class="list-group-item">${item.getName()}</li>
+            <li class="list-group-item"><p>${item.getName()}</p><a href="/cart/add?item=${item.getName()}&count=1">Add to cart</a></li>
             </c:forEach>
           </ul>
         </div>

@@ -12,10 +12,11 @@ import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 
 import net.eat.domain.Restaurant;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "owners")
-public class Owner {
+public class Owner implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

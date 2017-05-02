@@ -13,12 +13,13 @@ import javax.persistence.CascadeType;
 import javax.validation.constraints.NotNull;
 
 import java.util.Set;
+import java.io.Serializable;
 
 import net.eat.domain.Owner;
 
 @Entity
 @Table(name = "restaurants")
-public class Restaurant {
+public class Restaurant implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
