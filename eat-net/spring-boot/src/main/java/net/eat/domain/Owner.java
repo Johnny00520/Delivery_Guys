@@ -6,9 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.JoinColumn;
 import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
+
+import net.eat.domain.Restaurant;
 
 @Entity
 @Table(name = "owners")
@@ -24,6 +27,9 @@ public class Owner {
     @NotNull
     private String password;
 
+    @OneToOne
+    private Restaurant restaurant;
+
     @NotNull
     private String name;
 
@@ -33,6 +39,13 @@ public class Owner {
         this.username = username;
         this.password = password;
         this.name = name;
+    }
+
+    public Owner(String username, String password, String name, Restaurant restaurant) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.restaurant = restaurant;
     }
 
     public long getId() {
@@ -49,5 +62,9 @@ public class Owner {
 
     public String getName() {
         return this.name;
+    }
+
+    public Restaurant getRestaurant() {
+        return this.restaurant;
     }
 }

@@ -34,7 +34,8 @@ public class ShoppingCartController {
     private ShoppingCart cart;
 
     @PostMapping("/cart")
-    public String update(HttpSession session, Model model) {
+    public String update(@RequestParam(value="itemName") String itemName,
+                         HttpSession session, Model model) {
         model.addAttribute("restaurants", this.restaurants.findAll());
         model.addAttribute("items", this.items.findAll());
         model.addAttribute("cart", this.cart);
