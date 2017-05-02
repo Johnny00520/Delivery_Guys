@@ -40,8 +40,9 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
+            <li name="navbar-li-elem" role="presentation"><a href="/">Home</li>
             <li name="navbar-li-elem" role="presentation"><a href="/cart">Cart</a></li>
-            <li name="navbar-li-elem" role="presentation"><a href="/home">Business User Home</a></li>
+            <li name="navbar-li-elem" role="presentation"><a href="/home">Business Users</a></li>
             <li name="navbar-li-elem" role="presentation"><a href="/signup">Signup</a></li>
             <li name="navbar-li-elem" role="presentation"><a href="/login">Login</a></li>
           </ul>

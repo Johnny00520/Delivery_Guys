@@ -38,9 +38,11 @@
         <div class="header clearfix">
             <nav>
                 <ul class="nav nav-pills pull-right">
-                    <li role="presentation"><a href="\home">Home</a></li>
-                    <li role="presentation"><a href="\login">Login</a></li>
-                    <li role="presentation"><a href="\signup">Signup</a></li>
+                <li name="navbar-li-elem" role="presentation"><a href="/">Home</li>
+                <li name="navbar-li-elem" role="presentation"><a href="/cart">Cart</a></li>
+                <li name="navbar-li-elem" role="presentation"><a href="/home">Business Users</a></li>
+                <li name="navbar-li-elem" role="presentation"><a href="/signup">Signup</a></li>
+                <li name="navbar-li-elem" role="presentation"><a href="/login">Login</a></li>
                 </ul>
             </nav>
             <h3 class="text-muted"><i>Eat-net</i></h3>
