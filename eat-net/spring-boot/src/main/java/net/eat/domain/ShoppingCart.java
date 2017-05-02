@@ -21,19 +21,10 @@ import java.lang.Long;
 public class ShoppingCart implements Serializable {
     private HashMap<Item, Integer> items;
 
-    public Long data;
-
     public ShoppingCart() {
-        this.data = new Long(777);
+        this.items = new HashMap();
     }
 
-    public static ShoppingCart empty() {
-        ShoppingCart cart = new ShoppingCart();
-        cart.data = new Long(777);
-        return cart;
-    }
-
-    /*
     public void addItem(Item item, Integer count) {
         Integer currentCount;
         if (this.items.containsKey(item)) {
@@ -45,8 +36,11 @@ public class ShoppingCart implements Serializable {
         this.items.put(item, newCount);
     }
 
+    public void setItemCount(Item item, Integer count) {
+        this.items.put(item, count);
+    }
+
     public HashMap<Item, Integer> getItems() {
         return this.items;
     }
-    */
 }

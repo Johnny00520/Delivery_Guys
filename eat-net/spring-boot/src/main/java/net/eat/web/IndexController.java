@@ -31,24 +31,11 @@ public class IndexController {
     @Autowired
     private ShoppingCart cart;
 
-    @InitBinder
-    protected void initBinder(WebDataBinder binder) {
-        
-    }
-
     @GetMapping("/")
     public String index(HttpSession session, Model model) {
-        Logger logger = Logger.getLogger("mylog");
-        if (cart.data != null) {
-            logger.info(String.format("non-null shopping cart: %d", cart.data));
-            cart.data += 3;
-        } else {
-            logger.info(String.format("null shopping cart"));
-            cart.data = new Long(27);
-        }
         model.addAttribute("restaurants", this.restaurants.findAll());
         model.addAttribute("items", this.items.findAll());
-        model.addAttribute("shoppingcart", cart.data);
+        model.addAttribute("cart", this.cart);
         return "index";
     }
 }

@@ -13,21 +13,30 @@ import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.security.Principal;
+import java.util.logging.Logger;
 
 import net.eat.domain.Owner;
 import net.eat.domain.OwnerDao;
+import net.eat.domain.ShoppingCart;
 
 @Controller
 public class HomeController {
     @Autowired
     private OwnerDao owners;
 
+    @Autowired
+    private ShoppingCart cart;
+
     @GetMapping("/home")
     public String home(HttpServletRequest request, Model model) {
-        HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("Username");
+        String username = request.getUserPrincipal().getName();
+        Logger logger = Logger.getLogger("My-Logger");
+        logger.info("username: ");
+        logger.info(username);
         Owner owner = this.owners.findByUsername(username);
         model.addAttribute("owner", owner);
+        model.addAttribute("cart", this.cart);
         return "home";
     }
 }

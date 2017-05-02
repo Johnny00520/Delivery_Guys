@@ -49,7 +49,12 @@
     <div class="row">
         <div class="col-md-4 col-offset-4 text-left">
             <h1>Look it's your name</h1>
-            <p><c:out value="${owner.getName()}"/></p>
+            <p>${owner.getName()}</p>
+            <ul>
+                <c:forEach var="item" items="${cart.entrySet()}">
+                    <li 
+                </c:forEach>
+            <ul>
         </div>
     </div>
 
